@@ -2,10 +2,6 @@
 Various miscellaneous functions and utilities helpful
 in common web scraping tasks used in this project.
 """
-# common user agents
-# https://developers.whatismybrowser.com/useragents/explore/software_type_specific/web-browser/1
-# TODO download top 500-1000 most common user agents
-
 import time
 import random
 from typing import Union, Optional, List, Dict
@@ -92,16 +88,26 @@ def urlbuilder(base: str, **kwargs: Union[str, int]) -> str:
 
 if __name__ == '__main__':
     import json
+    import argparse
 
-    # downloads all the car make names and codes
-    print('Downloading car make names and codes to: static/cars.json')
-    codes = get_car_make_codes()
-    with open('static/cars.json', 'w') as f:
-        json.dump(codes, f, indent=2)
+    parser = argparse.ArgumentParser(
+        description='Download static files required by project'
+    )
+    parser.add_argument('--user-agents', action='store_true', dest='user_agents')
+    parser.add_argument('--car-makes', action='store_true', dest='car_makes')
+    args = parser.parse_args()
 
-    top_n_agents = 1000
-    print(f'Downloading the top {top_n_agents} browser user-agents to: static/user-agents.txt')
-    agents = get_user_agents(top_n_agents)
-    with open('static/user-agents.txt', 'w') as f:
-        for a in agents:
-            f.write(f'{a}\n')
+    if args.user_agents:
+        top_n_agents = 1000
+        print(f'Downloading the top {top_n_agents} browser user-agents to: static/user-agents.txt')
+        agents = get_user_agents(top_n_agents)
+        with open('static/user-agents.txt', 'w') as f:
+            for a in agents:
+                f.write(f'{a}\n')
+
+    if args.car_makes:
+        # downloads all the car make names and codes
+        print('Downloading car make names and codes to: static/cars.json')
+        codes = get_car_make_codes()
+        with open('static/cars.json', 'w') as f:
+            json.dump(codes, f, indent=2)
