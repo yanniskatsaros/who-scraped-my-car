@@ -1,0 +1,266 @@
+[
+  {
+    "name": "AMC",
+    "code": "AMC"
+  },
+  {
+    "name": "Acura",
+    "code": "ACURA"
+  },
+  {
+    "name": "Alfa Romeo",
+    "code": "ALFA"
+  },
+  {
+    "name": "Aston Martin",
+    "code": "ASTON"
+  },
+  {
+    "name": "Audi",
+    "code": "AUDI"
+  },
+  {
+    "name": "BMW",
+    "code": "BMW"
+  },
+  {
+    "name": "Bentley",
+    "code": "BENTL"
+  },
+  {
+    "name": "Bugatti",
+    "code": "BUGATTI"
+  },
+  {
+    "name": "Buick",
+    "code": "BUICK"
+  },
+  {
+    "name": "Cadillac",
+    "code": "CAD"
+  },
+  {
+    "name": "Chevrolet",
+    "code": "CHEV"
+  },
+  {
+    "name": "Chrysler",
+    "code": "CHRY"
+  },
+  {
+    "name": "Daewoo",
+    "code": "DAEW"
+  },
+  {
+    "name": "Datsun",
+    "code": "DATSUN"
+  },
+  {
+    "name": "DeLorean",
+    "code": "DELOREAN"
+  },
+  {
+    "name": "Dodge",
+    "code": "DODGE"
+  },
+  {
+    "name": "Eagle",
+    "code": "EAGLE"
+  },
+  {
+    "name": "FIAT",
+    "code": "FIAT"
+  },
+  {
+    "name": "Ferrari",
+    "code": "FER"
+  },
+  {
+    "name": "Fisker",
+    "code": "FISK"
+  },
+  {
+    "name": "Ford",
+    "code": "FORD"
+  },
+  {
+    "name": "Freightliner",
+    "code": "FREIGHT"
+  },
+  {
+    "name": "GMC",
+    "code": "GMC"
+  },
+  {
+    "name": "Genesis",
+    "code": "GENESIS"
+  },
+  {
+    "name": "Geo",
+    "code": "GEO"
+  },
+  {
+    "name": "HUMMER",
+    "code": "AMGEN"
+  },
+  {
+    "name": "Honda",
+    "code": "HONDA"
+  },
+  {
+    "name": "Hyundai",
+    "code": "HYUND"
+  },
+  {
+    "name": "INFINITI",
+    "code": "INFIN"
+  },
+  {
+    "name": "Isuzu",
+    "code": "ISU"
+  },
+  {
+    "name": "Jaguar",
+    "code": "JAG"
+  },
+  {
+    "name": "Jeep",
+    "code": "JEEP"
+  },
+  {
+    "name": "Karma",
+    "code": "KARMA"
+  },
+  {
+    "name": "Kia",
+    "code": "KIA"
+  },
+  {
+    "name": "Lamborghini",
+    "code": "LAM"
+  },
+  {
+    "name": "Land Rover",
+    "code": "ROV"
+  },
+  {
+    "name": "Lexus",
+    "code": "LEXUS"
+  },
+  {
+    "name": "Lincoln",
+    "code": "LINC"
+  },
+  {
+    "name": "Lotus",
+    "code": "LOTUS"
+  },
+  {
+    "name": "MAZDA",
+    "code": "MAZDA"
+  },
+  {
+    "name": "MINI",
+    "code": "MINI"
+  },
+  {
+    "name": "Maserati",
+    "code": "MAS"
+  },
+  {
+    "name": "Maybach",
+    "code": "MAYBACH"
+  },
+  {
+    "name": "McLaren",
+    "code": "MCLAREN"
+  },
+  {
+    "name": "Mercedes-Benz",
+    "code": "MB"
+  },
+  {
+    "name": "Mercury",
+    "code": "MERC"
+  },
+  {
+    "name": "Mitsubishi",
+    "code": "MIT"
+  },
+  {
+    "name": "Nissan",
+    "code": "NISSAN"
+  },
+  {
+    "name": "Oldsmobile",
+    "code": "OLDS"
+  },
+  {
+    "name": "Plymouth",
+    "code": "PLYM"
+  },
+  {
+    "name": "Pontiac",
+    "code": "PONT"
+  },
+  {
+    "name": "Porsche",
+    "code": "POR"
+  },
+  {
+    "name": "RAM",
+    "code": "RAM"
+  },
+  {
+    "name": "Rolls-Royce",
+    "code": "RR"
+  },
+  {
+    "name": "SRT",
+    "code": "SRT"
+  },
+  {
+    "name": "Saab",
+    "code": "SAAB"
+  },
+  {
+    "name": "Saturn",
+    "code": "SATURN"
+  },
+  {
+    "name": "Scion",
+    "code": "SCION"
+  },
+  {
+    "name": "Subaru",
+    "code": "SUB"
+  },
+  {
+    "name": "Suzuki",
+    "code": "SUZUKI"
+  },
+  {
+    "name": "Tesla",
+    "code": "TESLA"
+  },
+  {
+    "name": "Toyota",
+    "code": "TOYOTA"
+  },
+  {
+    "name": "Volkswagen",
+    "code": "VOLKS"
+  },
+  {
+    "name": "Volvo",
+    "code": "VOLVO"
+  },
+  {
+    "name": "Yugo",
+    "code": "YUGO"
+  },
+  {
+    "name": "smart",
+    "code": "SMART"
+  }
+]
