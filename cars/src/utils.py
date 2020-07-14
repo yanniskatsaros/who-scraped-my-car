@@ -4,6 +4,7 @@ in common web scraping tasks used in this project.
 """
 import time
 import random
+import json
 from typing import Union, Optional, List, Dict
 
 import requests
@@ -14,7 +15,7 @@ from urllib.parse import urlencode
 USER_AGENTS_BASE_URL = 'https://developers.whatismybrowser.com/useragents/explore/software_type_specific/web-browser'
 DEFAULT_USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36'
 
-def get_car_make_codes() -> List[Dict[str, str]]:
+def download_car_codes() -> List[Dict[str, str]]:
     """
     Downloads and parses a list of all available car make codes
     from Autotrader.com
@@ -37,7 +38,13 @@ def get_car_make_codes() -> List[Dict[str, str]]:
     )
     return [{'name': t.text, 'code': t['value']} for t in options]
 
-def get_user_agents(n: int) -> List[str]:
+def load_car_codes() -> List[Dict[str, str]]:
+    with open('static/cars.json', 'r') as f:
+        codes = json.load(f)
+
+    return codes
+
+def download_user_agents(n: int) -> List[str]:
     """
     Downloads a list of the top `n` most common
     browser user agents.
@@ -87,7 +94,6 @@ def urlbuilder(base: str, **kwargs: Union[str, int]) -> str:
     return f'{_base}{urlencode(kwargs)}'
 
 if __name__ == '__main__':
-    import json
     import argparse
 
     parser = argparse.ArgumentParser(
@@ -98,9 +104,9 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     if args.user_agents:
-        top_n_agents = 1000
-        print(f'Downloading the top {top_n_agents} browser user-agents to: static/user-agents.txt')
-        agents = get_user_agents(top_n_agents)
+        n = 1000
+        print(f'Downloading the top {n} browser user-agents to: static/user-agents.txt')
+        agents = download_user_agents(n)
         with open('static/user-agents.txt', 'w') as f:
             for a in agents:
                 f.write(f'{a}\n')
@@ -108,6 +114,6 @@ if __name__ == '__main__':
     if args.car_makes:
         # downloads all the car make names and codes
         print('Downloading car make names and codes to: static/cars.json')
-        codes = get_car_make_codes()
+        codes = download_car_codes()
         with open('static/cars.json', 'w') as f:
             json.dump(codes, f, indent=2)
