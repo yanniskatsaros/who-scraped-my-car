@@ -6,6 +6,7 @@ import time
 import random
 import json
 from typing import Union, Optional, List, Dict
+from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
@@ -14,6 +15,11 @@ from urllib.parse import urlencode
 
 USER_AGENTS_BASE_URL = 'https://developers.whatismybrowser.com/useragents/explore/software_type_specific/web-browser'
 DEFAULT_USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36'
+
+# path information
+SRC_PATH = Path(__file__).parent.resolve()
+CARS_PATH = SRC_PATH / 'static' / 'cars.json'
+USER_AGENTS_PATH = SRC_PATH / 'static' / 'user-agents.txt'
 
 def download_car_codes() -> List[Dict[str, str]]:
     """
@@ -39,7 +45,7 @@ def download_car_codes() -> List[Dict[str, str]]:
     return [{'name': t.text, 'code': t['value']} for t in options]
 
 def load_car_codes() -> List[Dict[str, str]]:
-    with open('static/cars.json', 'r') as f:
+    with open(CARS_PATH, 'r') as f:
         codes = json.load(f)
 
     return codes
@@ -107,7 +113,7 @@ if __name__ == '__main__':
         n = 1000
         print(f'Downloading the top {n} browser user-agents to: static/user-agents.txt')
         agents = download_user_agents(n)
-        with open('static/user-agents.txt', 'w') as f:
+        with open(USER_AGENTS_PATH, 'w') as f:
             for a in agents:
                 f.write(f'{a}\n')
 
@@ -115,5 +121,5 @@ if __name__ == '__main__':
         # downloads all the car make names and codes
         print('Downloading car make names and codes to: static/cars.json')
         codes = download_car_codes()
-        with open('static/cars.json', 'w') as f:
+        with open(CARS_PATH, 'w') as f:
             json.dump(codes, f, indent=2)
